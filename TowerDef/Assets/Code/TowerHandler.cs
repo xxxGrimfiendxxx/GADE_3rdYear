@@ -10,15 +10,17 @@ public class Tower : MonoBehaviour
    
     private Transform target;
     public Transform partRotate;
+    public Transform firePoint;
+    public float rotateSpeed = 10f;
+    
     [Header("Stats")]
     public float range;
     public int health = 100;
-    public float rotateSpeed = 10f;
     public float attackSPeed = 1f;
     public float attackCooldown = 0f;
-    
     public GameObject ammoType;
-    public Transform firePoint;
+    
+    
     
     
     // Function to deal damage to the tower
@@ -92,18 +94,41 @@ public class Tower : MonoBehaviour
        {
            ammo.Track(target);
        }
+       else
+       {
+           return;
+       }
     }
     private void TargetLockOn()
     {
+        if (partRotate == null)
+        {
+            Debug.Log
+                ("PartRotate not assigned!");
+            return;
+        }
+        if (target == null)
+        {
+            Debug.Log("Target Not found");
+            return;
+        }
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 actualRot = Quaternion.Lerp(partRotate.rotation, lookRotation, Time.deltaTime* rotateSpeed).eulerAngles;
         partRotate.rotation = Quaternion.Euler(0f, actualRot.y,0f);
         if (attackCooldown <= 0f)
         {
-            Shoot();
-            attackCooldown = 1f / attackSPeed;
+            if (ammoType != null && firePoint != null)
+            {
+                Shoot();
+                attackCooldown = 1f / attackSPeed;
+            }
+            else
+            {
+                Debug.LogError("FirePoint or AmmoType not assigned.");
+            }
         }
+
         attackCooldown -= Time.deltaTime;
     }
 

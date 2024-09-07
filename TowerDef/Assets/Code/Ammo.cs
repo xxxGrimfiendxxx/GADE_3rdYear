@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,8 +31,18 @@ public class Ammo : MonoBehaviour
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void HitTarget()
     {
         Debug.Log("Im shot");
+        if (GameObject.FindGameObjectsWithTag("Enemy")!= null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            return;
+        }
     }
+    
 }
