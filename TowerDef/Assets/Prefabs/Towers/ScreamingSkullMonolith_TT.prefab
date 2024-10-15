@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94526045d8008c747b63cd3c0c6a712d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 6.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94526045d8008c747b63cd3c0c6a712d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -282,7 +282,7 @@ MonoBehaviour:
   firePoint: {fileID: 3163801932951927661}
   rotateSpeed: 10
   healthBarPrefab: {fileID: 5059084145653989337, guid: fba4a5118c6236345ad440ccbeaede03, type: 3}
-  range: 10
+  range: 15
   maxHealth: 700
   currentHealth: 100
   attackSpeed: 1
