@@ -394,6 +394,7 @@
 "Assets/Code/Nkwe Code/Managers/MenuManager.cs"
 "Assets/Code/Nkwe Code/Managers/UIManager.cs"
 "Assets/Code/Nkwe Code/TerrainManagerElectricBogaloo.cs"
+"Assets/Code/Nkwe Code/TowerMangerTest.cs"
 "Assets/Code/Nkwe Code/Towers/Ammotypes/Ammo.cs"
 "Assets/Code/Nkwe Code/Towers/Tower.cs"
 "Assets/Code/Nkwe Code/Towers/TowerManager.cs"
