@@ -141,9 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743cfc2e827e3d84d93437e255bfdbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  currentHealth: 0
+  maxHealth: 100
   damage: 10
   attackRange: 2
   attackCooldown: 2
   enemyValue: 1
+  healthBarPrefab: {fileID: 5059084145653989337, guid: 6765525eca73c9544bc325d6f3e03086, type: 3}
   towerTag: Tower

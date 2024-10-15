@@ -230,6 +230,7 @@ MonoBehaviour:
   partRotate: {fileID: 3912761356053757337}
   firePoint: {fileID: 3620557815495084197}
   rotateSpeed: 3
+  healthBarPrefab: {fileID: 5059084145653989337, guid: 6765525eca73c9544bc325d6f3e03086, type: 3}
   range: 30
   health: 100
   attackSPeed: 1
