@@ -145,7 +145,10 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
         ResetUI();
     }
-
+    public void OnUpgradeButtonClicked(Tower tower)
+    {
+        tower.UpgradeTower();  // Upgrade the tower when the button is clicked
+    }
     public void TogglePause()
     {
         if (isPaused)

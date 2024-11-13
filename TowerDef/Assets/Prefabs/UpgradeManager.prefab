@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7324440513271365858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5718138645581986937}
+  - component: {fileID: 1309236867901511497}
+  - component: {fileID: 4474853751152133961}
+  - component: {fileID: 7738152243966825805}
+  m_Layer: 0
+  m_Name: UpgradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5718138645581986937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324440513271365858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.34293, y: -9.026796, z: 30.60557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309236867901511497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324440513271365858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abdf81f3c5cc904d850315e95344fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyText: {fileID: 0}
+  currentCurrency: 200
+  upgradeButton: {fileID: 0}
+  upgradeCostText: {fileID: 0}
+  baseTowers:
+  - {fileID: 3748299484233227438, guid: 0a3467835011b9c458df6e8259dd8959, type: 3}
+  - {fileID: 5330253856115446979, guid: d91cfc8759de007458e3b75f8f6af82f, type: 3}
+  - {fileID: 7571643534123957252, guid: b893c664948018745a7a3580aa956fcc, type: 3}
+  level2Towers: []
+  level3Towers: []
+--- !u!114 &4474853751152133961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324440513271365858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e484dafac018174cb087bf1810c8483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCurrency: 0
+--- !u!114 &7738152243966825805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324440513271365858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e4f46670c0a6641bbfc6bf318ede3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 336181439886965222, guid: 7159b45c9d825cd43aa7f2c832f78bb4, type: 3}
+  levelSprites:
+  - {fileID: 21300000, guid: df7fb15936ba3f84aa633a654fb4b2ba, type: 3}
+  - {fileID: 21300000, guid: 2f6632d3674c2914bb4ee77b24d7b727, type: 3}
+  - {fileID: 21300000, guid: db9f596de501b7344890263454151b8a, type: 3}

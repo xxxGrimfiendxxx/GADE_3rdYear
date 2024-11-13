@@ -1,9 +1,22 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    public UpgradeData[] upgrades;
+    
+
+    public UpgradeManager upgradeManager;
+    public int upgradeCost => upgrades[currentUpgradeLevel].cost;
+
+    public int currentUpgradeLevel = 0;  
+    
+
+    // Alternatively, use getter methods:
+    public int GetCurrentUpgradeLevel() => currentUpgradeLevel;
+    public HealthBar GetHealthBar() => healthBar;
+
+
     public event TowerDeath OnDeath;
     public delegate void TowerDeath();
 
@@ -15,12 +28,12 @@ public class Tower : MonoBehaviour
 
     // Health bar
     public GameObject healthBarPrefab;
-    private HealthBar healthBar;
+    public HealthBar healthBar;
 
     [Header("Stats")]
     public float range;
-    public int maxHealth;
-    public int currentHealth = 100;
+    public float maxHealth = 100f;
+    public float currentHealth = 100f;
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
     public GameObject ammoType;
@@ -29,6 +42,25 @@ public class Tower : MonoBehaviour
 
     // Add this flag to indicate whether the tower is in preview mode
     public bool isPreview = false;
+    public void UpgradeTower()
+    {
+        upgradeManager?.UpgradeTower(this);// Upgrade logic handled by UpgradeManager
+          // Null-safe call
+        if (currentUpgradeLevel < 2)  // Ensure it doesn't exceed level 3 (0, 1, 2)
+        {
+            currentUpgradeLevel++;
+            // Reset health when upgrading
+            currentHealth = maxHealth;
+
+            // You can also trigger other upgrade effects like damage or range here
+            HealthBarManager healthBarManager = FindObjectOfType<HealthBarManager>();
+            if (healthBarManager != null)
+            {
+                healthBarManager.AddHealthBar(this);  // Recreate the health bar with new sprite for upgraded tower
+            }
+        }
+    }
+    
 
     public void TakeDamage(int damage)
     {
@@ -38,8 +70,8 @@ public class Tower : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         // Update the health bar UI
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
+        healthBar?.SetHealth(currentHealth);  // Null-safe call
+        if (currentHealth <= 0f)
         {
             Die();
         }
@@ -52,11 +84,13 @@ public class Tower : MonoBehaviour
         Debug.Log(name + " has been destroyed.");
         OnDeath?.Invoke();
         Destroy(gameObject);
-        Destroy(healthBar.gameObject);
+        Destroy(healthBar?.gameObject);  // Null-safe call
     }
 
     private void Start()
     {
+        upgradeManager = FindObjectOfType<UpgradeManager>();  // Finds the UpgradeManager in the scene
+
         currentHealth = maxHealth;
         if (!isPreview) // Only instantiate the health bar if the tower is active
         {
@@ -67,6 +101,11 @@ public class Tower : MonoBehaviour
             healthBar.offset = new Vector3(0, 2f, 0);
         }
         InvokeRepeating("UpdateTarget", 0f, 1f);
+    }
+
+    void OnMouseDown()
+    {
+        upgradeManager?.ShowUpgradeButton(this);  // Show upgrade UI for this tower
     }
 
     private void UpdateTarget()
@@ -124,6 +163,8 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
+        if (ammoType == null || firePoint == null) return; // Guard clause to avoid errors
+
         GameObject ammoGO = Instantiate(ammoType, firePoint.position, firePoint.rotation);
         Ammo ammo = ammoGO.GetComponent<Ammo>();
         if (ammo != null)
@@ -142,5 +183,3 @@ public class Tower : MonoBehaviour
         }
     }
 }
-
-
