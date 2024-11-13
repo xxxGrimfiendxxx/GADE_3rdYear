@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8096975153481322423
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_Name
+      value: MountedKnight_ET
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7121756699585439775}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8746240769730019013}
+  m_SourcePrefab: {fileID: 100100000, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+--- !u!1 &8979990539317687014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e9d1453a38fada3499e1dc2a9c9ad959, type: 3}
+  m_PrefabInstance: {fileID: 8096975153481322423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7121756699585439775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979990539317687014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8bf3c8c48fdcb4486555c6542f706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 150
+  damage: 50
+  attackRange: 1.5
+  attackSpeed: 1
+  armorClass: 80
+  agility: 1
+  enemyValue: 10
+  healthBarPrefab: {fileID: 5059084145653989337, guid: 6765525eca73c9544bc325d6f3e03086, type: 3}
+  towerTag: Tower
+--- !u!195 &8746240769730019013
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979990539317687014}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
